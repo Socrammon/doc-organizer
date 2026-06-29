@@ -30,7 +30,7 @@ Tarefas já concluídas.
 
 # 3. Fonte de organização do projeto
 
-O arquivo `05-backlog.md` será utilizado como principal fonte de controle das tarefas do projeto.
+O arquivo `06-backlog.md` será utilizado como principal fonte de controle das tarefas do projeto.
 
 Todas as funcionalidades e melhorias serão registradas e movidas entre estados conforme o progresso.
 

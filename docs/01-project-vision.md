@@ -28,13 +28,7 @@ Um programa (CLI + servidor local) que:
 - **Específico para o ciclo de vida de projetos de software** — não é um gerenciador de tarefas genérico.
 
 ## Fora de escopo (nesta primeira versão)
-- Múltiplos modelos ágeis selecionáveis (Scrum, Kanban, etc.) — fica para uma versão futura.
-- Colaboração multiusuário em tempo real.
-- Integração direta com GitHub/GitLab (issues, PRs).
-- Geração de site de documentação publicável (estilo Docusaurus).
-- Avisos via notificação para celular para tarefas com data prevista.
-- Criação automatizada de prompt sobre o projeto para facilitar possível uso de IA.
-- Sistema de Diagramas.
+Os limites detalhados do que entra e do que fica de fora da primeira versão estão documentados em `02-scope-mvp.md`, para evitar duplicação de informação entre os documentos.
 
 ## Stack tecnológica inicial
 - Node.js + Express (servidor local)

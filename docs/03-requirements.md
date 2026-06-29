@@ -18,8 +18,9 @@ O sistema deve gerar automaticamente os seguintes arquivos na pasta `/docs`:
 - 01-project-vision.md
 - 02-scope-mvp.md
 - 03-requirements.md
-- 04-architecture.md
-- 05-backlog.md
+- 04-methodology.md
+- 05-architecture.md
+- 06-backlog.md
 
 ---
 
@@ -51,6 +52,11 @@ O sistema deve exibir o progresso geral da documentação com base no estado dos
 
 ---
 
+## RF08 - Manifesto do projeto (project.yaml)
+O sistema deve criar e manter um arquivo `project.yaml` na pasta `/docs`, contendo metadados estruturados do projeto: nome, status, metodologia adotada, data de criação e stack tecnológica.
+
+---
+
 # 2. Requisitos Não Funcionais
 
 ## RNF01 - Execução local
@@ -64,7 +70,7 @@ O sistema deve responder rapidamente às interações do usuário no dashboard e
 ---
 
 ## RNF03 - Persistência de dados
-As alterações feitas nos documentos devem ser salvas diretamente nos arquivos `.md`, sem uso de banco de dados.
+As alterações feitas nos documentos devem ser salvas diretamente nos arquivos `.md`, sem uso de banco de dados. Os metadados estruturados do projeto devem ser salvos no arquivo `project.yaml`.
 
 ---
 

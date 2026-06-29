@@ -54,6 +54,7 @@ Definir as primeiras tarefas reais de desenvolvimento do doc-organizer, organiza
 - criar função para listar arquivos `.md`
 - criar função para ler conteúdo de arquivos
 - criar função para salvar arquivos
+- criar função para gerar e ler o arquivo `project.yaml`
 
 ---
 

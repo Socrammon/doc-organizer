@@ -13,8 +13,10 @@ O MVP do doc-organizer é uma aplicação web local que permite criar, visualiza
   - 01-project-vision.md
   - 02-scope-mvp.md
   - 03-requirements.md
-  - 04-architecture.md
-  - 05-backlog.md
+  - 04-methodology.md
+  - 05-architecture.md
+  - 06-backlog.md
+- Gerar arquivo de metadados `project.yaml`
 
 ---
 
@@ -39,6 +41,12 @@ O MVP do doc-organizer é uma aplicação web local que permite criar, visualiza
 
 ---
 
+### 5. Metadados do projeto
+- Criar e manter o arquivo `project.yaml` na pasta `/docs`, contendo informações estruturadas do projeto: nome, status, metodologia adotada, data de criação e stack tecnológica
+- No MVP, esses dados servem apenas como registro estruturado (sem uso ainda pelo dashboard)
+
+---
+
 ## Fora do escopo (MVP)
 - login ou autenticação
 - banco de dados
@@ -54,7 +62,7 @@ O MVP do doc-organizer é uma aplicação web local que permite criar, visualiza
 ## Fluxo do usuário
 1. usuário abre o sistema local no navegador
 2. acessa o dashboard
-3. inicializa o projeto (cria `/docs`)
+3. inicializa o projeto (cria `/docs` e `project.yaml`)
 4. abre um documento
 5. edita o conteúdo
 6. salva o arquivo

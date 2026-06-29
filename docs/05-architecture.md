@@ -38,6 +38,7 @@ Responsável pela lógica do sistema.
 Funções:
 - criar estrutura `/docs`
 - ler arquivos Markdown
+- ler e escrever o arquivo `project.yaml`
 - salvar alterações nos arquivos
 - calcular progresso da documentação
 - fornecer dados para o frontend
@@ -47,7 +48,8 @@ Funções:
 ## 2.3 Sistema de arquivos
 Camada de persistência simples.
 
-- arquivos `.md` armazenam a documentação
+- arquivos `.md` armazenam a documentação textual
+- arquivo `project.yaml` armazena metadados estruturados do projeto (nome, status, metodologia, stack)
 - não há banco de dados
 - o filesystem é a fonte de verdade
 
@@ -71,7 +73,8 @@ doc-organizer/
 │ ├── 03-requirements.md
 │ ├── 04-methodology.md
 │ ├── 05-architecture.md
-│ └── 05-backlog.md
+│ ├── 06-backlog.md
+│ └── project.yaml
 │
 ├── server/
 │ ├── index.js
@@ -93,6 +96,7 @@ doc-organizer/
 
 ## Backend
 - gerenciar arquivos Markdown
+- gerenciar o arquivo `project.yaml`
 - expor API local
 - calcular status dos documentos
 
@@ -102,7 +106,8 @@ doc-organizer/
 - permitir edição
 
 ## Sistema de arquivos
-- armazenar tudo em `.md`
+- armazenar documentação em `.md`
+- armazenar metadados estruturados em `project.yaml`
 - servir como banco de dados simples
 
 ---
@@ -112,6 +117,7 @@ doc-organizer/
 - Não será utilizado banco de dados no MVP
 - O sistema será local (localhost)
 - A persistência será feita via arquivos Markdown
+- Arquivos `.md` armazenam documentação textual; o arquivo `project.yaml` armazena metadados estruturados do projeto
 - A arquitetura será simples e modular para facilitar evolução futura
 
 ---
@@ -123,3 +129,4 @@ Possíveis melhorias futuras:
 - modo LAN (multiusuário)
 - versionamento de documentos
 - banco de dados opcional para escala
+- uso do `project.yaml` pelo dashboard para exibir progresso geral do projeto
