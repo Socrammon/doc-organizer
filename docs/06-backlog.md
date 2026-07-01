@@ -8,12 +8,7 @@ Definir as primeiras tarefas reais de desenvolvimento do doc-organizer, organiza
 # 1. Estrutura inicial do projeto
 
 ## To Do
-- criar estrutura base do projeto Node.js
-- inicializar package.json
 - configurar Express server
-- criar pasta `/public`
-- criar pasta `/server`
-- criar pasta `/docs`
 
 ---
 
@@ -23,7 +18,11 @@ Definir as primeiras tarefas reais de desenvolvimento do doc-organizer, organiza
 ---
 
 ## Done
-- (vazio)
+- criar estrutura base do projeto Node.js
+- inicializar package.json
+- criar pasta `/public`
+- criar pasta `/server`
+- criar pasta `/docs`
 
 ---
 
@@ -71,6 +70,11 @@ Definir as primeiras tarefas reais de desenvolvimento do doc-organizer, organiza
 # 4. Frontend inicial
 
 ## To Do
+- (vazio)
+
+---
+
+## Doing
 - criar interface HTML básica do dashboard
 - criar layout do editor de documentos
 - criar lista de documentos na interface
@@ -78,13 +82,7 @@ Definir as primeiras tarefas reais de desenvolvimento do doc-organizer, organiza
 
 ---
 
-## Doing
-- (vazio)
-
----
-
 ## Done
-- (vazio)
 
 ---
 

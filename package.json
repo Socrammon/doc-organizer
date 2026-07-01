@@ -1,0 +1,26 @@
+{
+  "name": "doc-organizer",
+  "version": "1.0.0",
+  "description": "Local tool that guides and organizes software project documentation, stored as docs-as-code inside your repo.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Socrammon/doc-organizer.git"
+  },
+  "keywords": [
+    "doc",
+    "organizer"
+  ],
+  "author": "Marcos Alcides",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Socrammon/doc-organizer/issues"
+  },
+  "homepage": "https://github.com/Socrammon/doc-organizer#readme"
+}

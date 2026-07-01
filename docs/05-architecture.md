@@ -76,16 +76,16 @@ doc-organizer/
 │ ├── 06-backlog.md
 │ └── project.yaml
 │
+├── public/
+│ ├── app.js
+│ ├── index.html
+│ └── style.css
+│
 ├── server/
-│ ├── index.js
 │ ├── routes/
 │ ├── services/
-│ └── utils/
-│
-├── public/
-│ ├── index.html
-│ ├── style.css
-│ └── app.js
+│ ├── utils/
+│ └── index.js
 │
 ├── package.json
 └── README.md
