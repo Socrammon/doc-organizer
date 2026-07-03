@@ -56,6 +56,7 @@ O MVP do doc-organizer é uma aplicação web local que permite criar, visualiza
 - diagramas automáticos
 - múltiplos projetos
 - Progresso do projeto completo (não será implementado no MVP, apenas o progresso da documentação)
+- criar Masonry Layout para a tela home
 
 ---
 

@@ -4,13 +4,15 @@
     --primary: #775694;
     --accent: #e6e2eb;
 
+    --color-change: rgb(255, 255, 255);
+
     --background: #f8f6fb;
     --surface: #faf8fc;
 
     --text: #2a2a2a;
     --text-secondary: #666666;
 
-    --border: #D9D9D9;
+    --border: #dfdfdf;
 
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 
@@ -109,6 +111,11 @@ ol {
     list-style: none;
 }
 
+li {
+    white-space: pre-line;
+    text-overflow: normal;
+}
+
 
 /* BUTTONS */
 
@@ -160,7 +167,6 @@ h2 {
 p {
     white-space: pre-line;
     text-overflow: normal;
-    text-align: justify;
 }
 
 
@@ -171,6 +177,14 @@ p {
 }
 
 .screen.active {
+    display: block;
+}
+
+.subscreen {
+    display: none;
+}
+
+.subscreen.active {
     display: block;
 }
 
@@ -232,12 +246,91 @@ p {
     background-color: var(--border);
 
     width: auto;
+
+    margin-bottom: 20px;
+    
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-.pb-10 {
+.card.animation:hover {
+    scale: 1.02;
+    background-color: #775694;
+    color: var(--color-change);
+}
+
+.card.animation:active {
+    scale: 1.00;
+}
+
+.pb-30 {
     padding-bottom: 30px;
 }
 
+.horizontal-list {
+    columns: 2;
+    align-items: flex-end;
+    gap: 20px 40px;
+}
+
+.horizontal-list>div {
+    flex: 1;
+    break-inside: avoid;
+    width: 100%;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.dark {
+    background: #2a2a2a;
+    color: #e6e2eb;
+}
+
+.topics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.topics>li {
+    background-color: var(--border);
+    padding: 7px;
+    border-radius: 10px;
+    
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.topics.animation>li:hover {
+    scale: 1.02;
+    background-color: #775694;
+    color: var(--color-change);
+}
+
+.topics.animation>li:active {
+    scale: 1.00;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+
+    .horizontal-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        margin-bottom: 0;
+    }
+
+}
 
 
 /* TABLET RESPONSIVE */
@@ -250,6 +343,11 @@ p {
 
     .container {
         width: 92%;
+    }
+
+    .horizontal-list {
+        display: flex;
+        flex-direction: column;
     }
 
 }
@@ -265,6 +363,11 @@ p {
 
     .container {
         width: 95%;
+    }
+
+    .horizontal-list {
+        display: flex;
+        flex-direction: column;
     }
 
 }

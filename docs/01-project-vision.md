@@ -27,9 +27,6 @@ Um programa (CLI + servidor local) que:
 - **Guia o processo**, não só renderiza Markdown pronto (diferente de ferramentas como MkDocs/Docusaurus).
 - **Específico para o ciclo de vida de projetos de software** — não é um gerenciador de tarefas genérico.
 
-## Fora de escopo (nesta primeira versão)
-Os limites detalhados do que entra e do que fica de fora da primeira versão estão documentados em `02-scope-mvp.md`, para evitar duplicação de informação entre os documentos.
-
 ## Stack tecnológica inicial
 - Node.js + Express (servidor local)
 - HTML/CSS/JS puro na interface (sem framework de front nesta fase)

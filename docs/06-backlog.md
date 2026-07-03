@@ -83,6 +83,7 @@ Definir as primeiras tarefas reais de desenvolvimento do doc-organizer, organiza
 ---
 
 ## Done
+- (vazio)
 
 ---
 
