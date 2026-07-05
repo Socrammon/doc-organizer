@@ -2,7 +2,9 @@
 
 :root {
     --primary: #775694;
-    --accent: #e2dbeb;
+    --primary-shadow: #634a79;
+    --accent: #c0acd8;
+    --accent-shadow: #a796be;
 
     --background: #f8f6fb;
     --surface: #faf8fc;
@@ -12,6 +14,7 @@
     --text-inverse: #ffffff;
 
     --border: #eaeaea;
+    --border-shadow: #c2c2c2;
 
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     --strong-shadow: 0 2px 10px rgba(0, 0, 0, 0.397);
@@ -19,6 +22,7 @@
     --radius: 8px;
 
     --transition: 0.2s ease;
+    --slow-transition: 0.3s ease;
 }
 
 
@@ -112,7 +116,6 @@ ol {
 }
 
 li {
-    white-space: pre-line;
     text-overflow: normal;
 }
 
@@ -165,7 +168,6 @@ h2 {
 }
 
 p {
-    white-space: pre-line;
     text-overflow: normal;
 }
 
@@ -217,7 +219,7 @@ p {
 .nav-buttons-div {
     padding: 0 clamp(4px, 5cqi, 40px) 0 clamp(8px, 6cqi, 90px);
 
-    width: clamp(60vw, 80vw, 90vw);
+    width: 80vw;
     overflow: hidden;
 }
 
@@ -226,7 +228,7 @@ p {
 
     background-color: var(--background);
     color: var(--text);
-    border-radius: 10px;
+    border-radius: var(--radius);
 
     font-weight: bold;
 }
@@ -258,13 +260,16 @@ p {
 }
 
 .card.animation:hover {
-    scale: 1.02;
     background-color: var(--primary);
     color: var(--text-inverse);
+
+    scale: 1.02;
+
+    transform: translateY(-1px);
 }
 
 .card.animation:active {
-    scale: 1.00;
+    scale: 1;
 }
 
 .pb-30 {
@@ -277,7 +282,6 @@ p {
 }
 
 .horizontal-list>div {
-    flex: 1;
     break-inside: avoid;
     width: 100%;
 }
@@ -313,13 +317,16 @@ p {
 }
 
 .topics.animation>li:hover {
-    scale: 1.02;
     background-color: var(--primary);
     color: var(--text-inverse);
+
+    scale: 1.02;
+
+    transform: translateY(-1px);
 }
 
 .topics.animation>li:active {
-    scale: 1.00;
+    scale: 1;
 }
 
 .doc-switch-button {
@@ -348,11 +355,11 @@ p {
 
     padding: 10px;
 
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
 
     box-shadow: var(--strong-shadow);
 
-    background-color: var(--background);
+    background-color: var(--border);
 
     height: 100%;
 
@@ -360,23 +367,40 @@ p {
 }
 
 .doc-switch-button>div>button {
-    padding: clamp(4px, 1vh, 10px) 14px;
+    padding: clamp(4px, 1.4vh, 10px) 14px;
     background-color: var(--accent);
     color: var(--text);
-    box-shadow: var(--strong-shadow);
+    box-shadow: 0 6px 0 var(--accent-shadow);
+
+    transform: translateY(-3px);
+
+    transition: var(--slow-transition);
+}
+
+.doc-switch-button>div>button:hover {
+    box-shadow: 0 9px 0 var(--accent-shadow);
+    transform: translateY(-6px);
+}
+
+.doc-switch-button>div>button:active {
+    box-shadow: 0 6px 0 var(--accent-shadow);
+    transform: translateY(-3px);
 }
 
 .doc-switch-button>div>button.active {
     background-color: var(--primary);
     color: var(--text-inverse);
+    box-shadow: 0 6px 0 var(--primary-shadow);
 }
 
-.doc-switch-button>div>button:hover {
-    transform: scale(1.1);
+.doc-switch-button>div>button.active:hover {
+    box-shadow: 0 9px 0 var(--primary-shadow);
+    transform: translateY(-6px);
 }
 
-.doc-switch-button>div>button:active {
-    transform: scale(0.98);
+.doc-switch-button>div>button.active:active {
+    box-shadow: 0 6px 0 var(--primary-shadow);
+    transform: translateY(-3px);
 }
 
 .doc-switch-button:hover>div {
@@ -394,6 +418,17 @@ p {
 
     .card {
         margin-bottom: 0;
+    }
+
+}
+
+
+@media (max-height: 650px) {
+
+    .doc-switch-button {
+        top: 23%;
+
+        height: 54%;
     }
 
 }
@@ -424,12 +459,14 @@ p {
         align-items: center;
         flex-direction: row;
 
+        border-radius: 10px 10px 0 0;
+
         height: auto;
         overflow: hidden;
     }
 
     .doc-switch-button:hover>div {
-        transform: translateY(-15px);
+        transform: translateY(-18px);
     }
 
     .doc-switch-button>div>button {
@@ -445,7 +482,7 @@ p {
         }
 
         .doc-switch-button>div {
-            transform: translateY(21px);
+            transform: translateY(26px);
         }
 
         .doc-switch-button>div>button {
@@ -477,6 +514,38 @@ p {
     .horizontal-list {
         display: flex;
         flex-direction: column;
+    }
+
+    @media (min-height: 500px) {
+
+        .doc-switch-button {
+            top: 24%;
+
+            height: 52%;
+        }
+
+        .doc-switch-button>div {
+            padding: 7px;
+
+            transform: translateX(-25px);
+
+            overflow: hidden;
+        }
+
+        .doc-switch-button>div>button {
+            padding: clamp(4px, 1.1vh, 10px) 10px;
+        }
+
+    }
+
+    @media (min-height: 580px) and (max-width: 768px) {
+
+        .doc-switch-button {
+            top: 27%;
+
+            height: 46%;
+        }
+
     }
 
 }

@@ -26,97 +26,93 @@
 
     <main>
         <section class="screen active" id="home-screen">
+            <div class="doc-switch-button">
+                <div>
+                    <button class="active" id="project-vision-nav-button">01</button>
+                    <button class="" id="scope-mvp-nav-button">02</button>
+                    <button class="" id="requirements-nav-button">03</button>
+                    <button class="" id="methodology-nav-button">04</button>
+                    <button class="" id="architecture-nav-button">05</button>
+                    <button class="" id="backlog-nav-button">06</button>
+                </div>
+            </div>
             <section class="subscreen active" id="project-vision">
                 <div class="container">
-                    <div class="doc-switch-button">
+                    <div class="horizontal-list pb-30">
                         <div>
-                            <button class="active" id="project-vision-nav-button">01</button>
-                            <button class="" id="scope-mvp-nav-button">02</button>
-                            <button class="" id="requirements-nav-button">03</button>
-                            <button class="" id="methodology-nav-button">04</button>
-                            <button class="" id="architecture-nav-button">05</button>
-                            <button class="" id="backlog-nav-button">06</button>
+                            <h2>Problem / Motivation</h2>
+                            <div class="card animation">
+                                <p class="justify" id="problem-motivation-text">The Problem / Motivation section explains why the project exists and what specific problem, need, or opportunity it is meant to address. It provides essential context for the solution, helping developers, stakeholders, and new contributors quickly understand the purpose of the project before diving into technical details.
+
+                                    Including this section improves the clarity and quality of the documentation, since it connects the technical implementation to a real-world or business need. It also helps ensure that everyone involved in the project shares the same understanding of its goals, which reduces misalignment during development and decision-making.
+
+                                    In addition, the Problem / Motivation section serves as a reference point throughout the project lifecycle. It helps teams evaluate whether the work being done is still aligned with the original objective and can guide prioritization when trade-offs are needed. Overall, it strengthens communication, supports better planning, and makes the documentation more meaningful and complete.
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
+                        <div>
+                            <h2>Project objective</h2>
+                            <div class="card animation">
+                                <p class="justify" id="project-objective-text">The Project Objective defines what the project aims to achieve in a clear and direct way. It describes the final result or outcome expected from the system, helping everyone involved understand what success looks like. Unlike the problem statement, which explains the context and motivation, the objective focuses on the desired solution and end goal.
 
-                        <div class="horizontal-list pb-30">
-                            <div>
-                                <h2>Problem / Motivation</h2>
-                                <div class="card animation">
-                                    <p class="justify" id="problem-motivation-text">The Problem / Motivation section explains why the project exists and what specific problem, need, or opportunity it is meant to address. It provides essential context for the solution, helping developers, stakeholders, and new contributors quickly understand the purpose of the project before diving into technical details.
+                                Having a well-defined objective is essential because it guides all development decisions throughout the project. It helps prioritize features, avoid unnecessary work, and ensures that the team stays aligned with the main purpose. Without a clear objective, projects can easily become unfocused or grow in unintended directions.
 
-                                        Including this section improves the clarity and quality of the documentation, since it connects the technical implementation to a real-world or business need. It also helps ensure that everyone involved in the project shares the same understanding of its goals, which reduces misalignment during development and decision-making.
+                                In addition, the objective serves as a reference point for evaluating progress and success. It allows teams to verify whether the implemented features are actually contributing to the intended goal. This improves communication between developers, stakeholders, and clients, making expectations clearer and reducing misunderstandings.
 
-                                        In addition, the Problem / Motivation section serves as a reference point throughout the project lifecycle. It helps teams evaluate whether the work being done is still aligned with the original objective and can guide prioritization when trade-offs are needed. Overall, it strengthens communication, supports better planning, and makes the documentation more meaningful and complete.
-                                    </p>
-                                </div>
+                                Overall, a well-written project objective provides direction, focus, and measurable purpose, making the development process more efficient and organized.
+                                </p>
                             </div>
+                        </div>
 
                             <div>
-                                <h2>Project objective</h2>
-                                <div class="card animation">
-                                    <p class="justify" id="project-objetive-text">The Project Objective defines what the project aims to achieve in a clear and direct way. It describes the final result or outcome expected from the system, helping everyone involved understand what success looks like. Unlike the problem statement, which explains the context and motivation, the objective focuses on the desired solution and end goal.
+                            <h2>Target Audience</h2>
+                            <ul class="topics animation" id="target-audience-topics">
+                                <li>- Identifies who the project is intended for and who will benefit from it.</li>
+                                <li>- Helps developers make design and implementation decisions focused on users' needs.</li>
+                                <li>- Ensures that project requirements and features align with the expectations of the intended audience.</li>
+                                <li>- Improves communication between developers, stakeholders, and clients by establishing a shared understanding of the target users.</li>
+                                <li>- Reduces the risk of developing unnecessary features that do not provide value.</li>
+                                <li>- Makes the documentation clearer for new contributors by explaining who the system is designed to serve.</li>
+                                <li>- Supports better prioritization of tasks and project goals throughout the development process.</li>
+                                <li>- Provides a reference for evaluating whether the final product successfully meets the needs of its intended users.</li>
+                            </ul>
+                        </div>
 
-                                    Having a well-defined objective is essential because it guides all development decisions throughout the project. It helps prioritize features, avoid unnecessary work, and ensures that the team stays aligned with the main purpose. Without a clear objective, projects can easily become unfocused or grow in unintended directions.
+                        <div>
+                            <h2>Solution proposal</h2>
+                            <ul class="topics animation" id="solution-proposal-topics">
+                                <li>1. Defines a high-level solution to the problem, turning requirements into a clear direction for implementation.</li>
+                                <li>2. Acts as a bridge between understanding the problem and building the solution in practice.</li>
+                                <li>3. Aligns the team and stakeholders by reducing ambiguity and keeping everyone on the same page.</li>
+                                <li>4. Helps compare and justify different solution approaches based on key criteria like cost and complexity.</li>
+                                <li>5. Reduces rework by documenting the chosen approach before development starts.</li>
+                                <li>6. Records important decisions to support future maintenance and system updates.</li>
+                            </ul>
+                        </div>
 
-                                    In addition, the objective serves as a reference point for evaluating progress and success. It allows teams to verify whether the implemented features are actually contributing to the intended goal. This improves communication between developers, stakeholders, and clients, making expectations clearer and reducing misunderstandings.
+                        <div>
+                            <h2>Differential</h2>
+                            <ul class="topics animation" id="differentials-topics">
+                                <li>- Adding a “differential” section in documentation helps highlight what makes the project or solution unique compared to other approaches.</li>
+                                <li>- It clearly communicates the main advantages and innovations of the system, making its value easier to understand.</li>
+                                <li>- It supports decision-making by showing why this solution was chosen over alternatives.</li>
+                                <li>- It improves communication with stakeholders by emphasizing benefits in a simple and direct way.</li>
+                                <li>- It helps position the project better by making its strengths explicit and easy to identify.</li>
+                                <li>- It also serves as a quick reference for the team to remember the core competitive or technical advantages.</li>
+                            </ul>
+                        </div>
 
-                                    Overall, a well-written project objective provides direction, focus, and measurable purpose, making the development process more efficient and organized.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h2>Target Audience</h2>
-                                <ul class="topics animation" id="target-audience-topics">
-                                    <li>- Identifies who the project is intended for and who will benefit from it.</li>
-                                    <li>- Helps developers make design and implementation decisions focused on users' needs.</li>
-                                    <li>- Ensures that project requirements and features align with the expectations of the intended audience.</li>
-                                    <li>- Improves communication between developers, stakeholders, and clients by establishing a shared understanding of the target users.</li>
-                                    <li>- Reduces the risk of developing unnecessary features that do not provide value.</li>
-                                    <li>- Makes the documentation clearer for new contributors by explaining who the system is designed to serve.</li>
-                                    <li>- Supports better prioritization of tasks and project goals throughout the development process.</li>
-                                    <li>- Provides a reference for evaluating whether the final product successfully meets the needs of its intended users.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h2>Solution proposal</h2>
-                                <ul class="topics animation" id="solution-proposal-topics">
-                                    <li>1. Defines a high-level solution to the problem, turning requirements into a clear direction for implementation.</li>
-                                    <li>2. Acts as a bridge between understanding the problem and building the solution in practice.</li>
-                                    <li>3. Aligns the team and stakeholders by reducing ambiguity and keeping everyone on the same page.</li>
-                                    <li>4. Helps compare and justify different solution approaches based on key criteria like cost and complexity.</li>
-                                    <li>5. Reduces rework by documenting the chosen approach before development starts.</li>
-                                    <li>6. Records important decisions to support future maintenance and system updates.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h2>Differential</h2>
-                                <ul class="topics animation" id="differentials-topics">
-                                    <li>- Adding a “differential” section in documentation helps highlight what makes the project or solution unique compared to other approaches.</li>
-                                    <li>- It clearly communicates the main advantages and innovations of the system, making its value easier to understand.</li>
-                                    <li>- It supports decision-making by showing why this solution was chosen over alternatives.</li>
-                                    <li>- It improves communication with stakeholders by emphasizing benefits in a simple and direct way.</li>
-                                    <li>- It helps position the project better by making its strengths explicit and easy to identify.</li>
-                                    <li>- It also serves as a quick reference for the team to remember the core competitive or technical advantages.</li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h2>Initial technology stack</h2>
-                                <ul class="topics animation" id="initial-tech-stack-topics">
-                                    <li>- Defines the technologies chosen at the beginning of the project, creating a clear technical foundation for development.</li>
-                                    <li>- Helps ensure consistency across the codebase by aligning the team on the same tools, frameworks, and libraries.</li>
-                                    <li>- Reduces confusion and unnecessary changes by documenting decisions early in the project lifecycle.</li>
-                                    <li>- Makes onboarding easier for new developers by clearly showing what technologies are being used.</li>
-                                    <li>- Supports better planning by allowing the team to evaluate compatibility, scalability, and project constraints.</li>
-                                    <li>- Serves as a reference for future updates or migrations of technologies throughout the project.</li>
-                                </ul>
-                            </div>
+                        <div>
+                            <h2>Initial technology stack</h2>
+                            <ul class="topics animation" id="initial-tech-stack-topics">
+                                <li>- Defines the technologies chosen at the beginning of the project, creating a clear technical foundation for development.</li>
+                                <li>- Helps ensure consistency across the codebase by aligning the team on the same tools, frameworks, and libraries.</li>
+                                <li>- Reduces confusion and unnecessary changes by documenting decisions early in the project lifecycle.</li>
+                                <li>- Makes onboarding easier for new developers by clearly showing what technologies are being used.</li>
+                                <li>- Supports better planning by allowing the team to evaluate compatibility, scalability, and project constraints.</li>
+                                <li>- Serves as a reference for future updates or migrations of technologies throughout the project.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
