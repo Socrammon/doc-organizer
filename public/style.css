@@ -194,6 +194,20 @@ h2 {
     margin: 0 auto;
 }
 
+.text-center {
+    width: 100%;
+
+    text-align: center;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.justify {
+    text-align: justify;
+}
+
 .logo {
     padding: 0 0 0 clamp(2cqi, 3cqi, 90px);
 
@@ -263,10 +277,6 @@ h2 {
     scale: 1;
 }
 
-.pb-30 {
-    padding-bottom: 30px;
-}
-
 .horizontal-list {
     columns: 2;
     gap: 20px 40px;
@@ -275,10 +285,6 @@ h2 {
 .horizontal-list>div {
     break-inside: avoid;
     width: 100%;
-}
-
-.justify {
-    text-align: justify;
 }
 
 .topics {
@@ -391,7 +397,7 @@ h2 {
 .doc-switch-button>div>button:hover>span {
     width: 120px;
 
-    transition: width 1s ease 2.5s;
+    transition: width 1s ease 2s;
 }
 
 .doc-switch-button>div>button:hover>span.medium {
@@ -434,6 +440,8 @@ h2 {
 
 
 /* RESPONSIVE */
+
+/* QUEBRA DE LAYOUT */
 @media (max-width: 1100px) {
 
     .horizontal-list {
@@ -447,8 +455,49 @@ h2 {
 
 }
 
+/* TABLET RESPONSIVE */
+@media (max-width: 768px) {
 
-@media (max-height: 650px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+}
+
+/* DISABLE DOC-SWITCH */
+@media (max-height: 130px),
+(max-width: 300px) {
+
+    .doc-switch-button {
+        display: none;
+    }
+
+}
+
+
+/* -------------------------------------------------------- */
+
+
+/* DOC-SWITCH-VERTICAL */
+
+@media (min-height: 501px) and (max-height: 580px) and (min-width: 769px) {
 
     .doc-switch-button {
         top: 23%;
@@ -457,6 +506,63 @@ h2 {
     }
 
 }
+
+@media (min-height: 581px) and (min-width: 769px) {
+
+    .doc-switch-button {
+        top: 27%;
+
+        height: 46%;
+    }
+
+}
+
+/* LITTLE DOC-SWITCH-VERTICAL BAR */
+@media (min-height: 501px) and (max-width: 768px) {
+
+    .doc-switch-button {
+        top: 24%;
+
+        height: 52%;
+    }
+
+    .doc-switch-button>div {
+        padding: 7px;
+
+        transform: translateX(-25px);
+
+        overflow: visible;
+
+        width: 50px;
+    }
+
+    .doc-switch-button>div>button {
+        padding: clamp(4px, 1.1vh, 10px) 10px;
+    }
+
+    .doc-switch-button>div>button>span {
+        font-size: 14px;
+    }
+
+    .doc-switch-button>div>button:hover>span {
+        width: 110px;
+    }
+
+    .doc-switch-button>div>button:hover>span.medium {
+        width: 90px;
+    }
+
+    .doc-switch-button>div>button:hover>span.little {
+        width: 70px;
+    }
+
+}
+
+
+/* -------------------------------------------------------- */
+
+
+/* DOC-SWITCH-HORIZONTAL */
 
 @media (max-height: 500px) {
 
@@ -497,23 +603,145 @@ h2 {
     }
 
     .doc-switch-button>div>button {
-        padding: 6px clamp(16px, 1.5vw, 32px);
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: row;
+        overflow: hidden;
+
+        padding: 6px clamp(16px, 2vw, 60px);
+
+        transition: var(--slow-transition);
+    }
+
+    .doc-switch-button>div>button:hover {
+        padding: 6px clamp(16px, 2vw, 60px) 6px 0;
+        padding-left: clamp(11px, 1.3vw, 40px);
+        transition: box-shadow var(--slow-transition), transform var(--slow-transition), padding-left 0.6s ease 2.1s;
+    }
+
+    .doc-switch-button>div>button.active:hover {
+        transition: box-shadow var(--slow-transition), transform var(--slow-transition), padding-left 0.6s ease 2.1s;
     }
 
     .doc-switch-button>div>button>span {
-        transform: translateX(8px);
+        transform: translateX(20px);
     }
 
     .doc-switch-button>div>button:hover>span {
-        width: 400px;
-    }
-
-    .doc-switch-button>div>button:hover>span.medium {
         width: 200px;
     }
 
+    .doc-switch-button>div>button:hover>span.medium {
+        width: 110px;
+    }
+
     .doc-switch-button>div>button:hover>span.little {
-        width: 100px;
+        width: 80px;
+    }
+
+    @media (min-width: 1911px) and (max-width: 2290px) {
+
+        .doc-switch-button {
+            left: 32.5%;
+            width: 35%;
+        }
+
+    }
+
+    @media (min-width: 1781px) and (max-width: 1910px) {
+
+        .doc-switch-button {
+            left: 32%;
+            width: 36%;
+        }
+
+    }
+
+    @media (min-width: 1501px) and (max-width: 1780px) {
+
+        .doc-switch-button {
+            left: 30%;
+            width: 40%;
+        }
+
+        .doc-switch-button>div>button:hover {
+            padding: 6px clamp(16px, 2vw, 60px) 6px 0;
+            padding-left: clamp(11px, 1.5vw, 40px);
+        }
+
+        .doc-switch-button>div>button>span {
+            transform: translateX(15px);
+        }
+
+        .doc-switch-button>div>button:hover>span {
+            width: 150px;
+        }
+
+        .doc-switch-button>div>button:hover>span.medium {
+            width: 100px;
+        }
+
+    }
+
+    @media (min-width: 1401px) and (max-width: 1500px) {
+
+        .doc-switch-button {
+            left: 29%;
+            width: 42%;
+        }
+
+        .doc-switch-button>div>button:hover {
+            padding: 6px clamp(16px, 2vw, 60px) 6px 0;
+            padding-left: clamp(11px, 1.7vw, 40px);
+        }
+
+        .doc-switch-button>div>button>span {
+            transform: translateX(12px);
+        }
+
+        .doc-switch-button>div>button:hover>span {
+            width: 120px;
+        }
+
+        .doc-switch-button>div>button:hover>span.medium {
+            width: 100px;
+        }
+
+        .doc-switch-button>div>button:hover>span.little {
+            width: 70px;
+        }
+
+    }
+
+    @media (min-width: 1201px) and (max-width: 1400px) {
+
+        .doc-switch-button {
+            left: 28%;
+            width: 44%;
+        }
+
+        .doc-switch-button>div>button:hover {
+            padding: 6px clamp(16px, 2vw, 60px) 6px 0;
+            padding-left: clamp(11px, 1.7vw, 40px);
+        }
+
+        .doc-switch-button>div>button>span {
+            transform: translateX(12px);
+        }
+
+        .doc-switch-button>div>button:hover>span {
+            width: 120px;
+        }
+
+        .doc-switch-button>div>button:hover>span.medium {
+            width: 100px;
+        }
+
+        .doc-switch-button>div>button:hover>span.little {
+            width: 70px;
+        }
+
     }
 
     @media (max-width: 1320px) {
@@ -522,16 +750,21 @@ h2 {
             font-size: 15px;
         }
 
-        .doc-switch-button>div>button:hover>span {
-            width: 400px;
+    }
+
+    @media (max-width: 1200px) {
+
+        .doc-switch-button {
+            left: 27%;
+            width: 46%;
         }
 
-        .doc-switch-button>div>button:hover>span.medium {
-            width: 200px;
+        .doc-switch-button>div>button:hover {
+            padding: 6px clamp(16px, 2vw, 60px);
         }
 
-        .doc-switch-button>div>button:hover>span.little {
-            width: 100px;
+        .doc-switch-button>div>button>span {
+            transform: translateX(11px);
         }
 
     }
@@ -539,9 +772,9 @@ h2 {
     @media (max-width: 950px) {
 
         .doc-switch-button {
-            left: 25%;
+            left: 26%;
 
-            width: max(250px, 50%);
+            width: 48%;
         }
 
         .doc-switch-button>div {
@@ -549,37 +782,41 @@ h2 {
         }
 
         .doc-switch-button>div>button {
-            padding: 4px clamp(7px, 1.7vw, 32px);
+            padding: 4px clamp(9px, 1.7vw, 32px);
+        }
+
+        .doc-switch-button>div>button:hover {
+            padding: 4px clamp(9px, 1.7vw, 32px);
+        }
+
+        .doc-switch-button>div>button.active:hover {
+            padding: 4px clamp(9px, 1.7vw, 32px);
+        }
+
+        .doc-switch-button>div>button>span {
+            transform: translateX(5px);
         }
 
         .doc-switch-button>div>button:hover>span {
-            width: 100px;
+            width: 180px;
         }
 
         .doc-switch-button>div>button:hover>span.medium {
-            width: 85px;
+            width: 120px;
         }
 
         .doc-switch-button>div>button:hover>span.little {
-            width: 60px;
+            width: 70px;
         }
 
     }
 
-    @media (max-width: 875px) {
-
-        .doc-switch-button>div>button:hover>span {
-            width: 130px;
-        }
-
-    }
-
-    @media (max-width: 800px) {
+    @media (min-width: 769px) and (max-width: 800px) {
 
         .doc-switch-button>div>button>span {
-            font-size: 13px;
-
             transform: translateX(5px);
+
+            font-size: 13px;
         }
 
         .doc-switch-button>div>button:hover>span {
@@ -596,107 +833,22 @@ h2 {
 
     }
 
-    @media (max-width: 700px) {
+    /* DISABLE EXPANSIVE DOC-SWITCH BUTTON */
+    @media (max-width: 768px) {
+
 
         .doc-switch-button>div>button:hover>span {
-            width: 0;
+            width: 0px;
         }
 
         .doc-switch-button>div>button:hover>span.medium {
-            width: 0;
+            width: 0px;
         }
 
         .doc-switch-button>div>button:hover>span.little {
-            width: 0;
+            width: 0px;
         }
 
-    }
-}
-
-@media (max-height: 130px) {
-    .doc-switch-button {
-        display: none;
-    }
-}
-
-
-/* TABLET RESPONSIVE */
-
-@media (max-width: 768px) {
-
-    body {
-        font-size: 15px;
-    }
-
-    .container {
-        width: 92%;
-    }
-
-    .horizontal-list {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .doc-switch-button>div>button:hover>span {
-        width: 110px;
-        font-size: 14px;
-    }
-
-    .doc-switch-button>div>button:hover>span.medium {
-        width: 90px;
-    }
-
-    .doc-switch-button>div>button:hover>span.little {
-        width: 70px;
-    }
-
-    @media (min-height: 500px) {
-
-        .doc-switch-button {
-            top: 24%;
-
-            height: 52%;
-        }
-
-        .doc-switch-button>div {
-            padding: 7px;
-
-            transform: translateX(-25px);
-
-            overflow: visible;
-
-            width: 50px;
-        }
-
-        .doc-switch-button>div>button {
-            padding: clamp(4px, 1.1vh, 10px) 10px;
-        }
-
-    }
-
-    @media (min-height: 580px) and (max-width: 768px) {
-
-        .doc-switch-button {
-            top: 27%;
-
-            height: 46%;
-        }
-
-    }
-
-}
-
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width: 480px) {
-
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        width: 95%;
     }
 
 }
