@@ -7,13 +7,13 @@
     --accent-shadow: #a796be;
 
     --background: #f8f6fb;
-    --surface: #faf8fc;
+    --surface: #f8f6fb;
 
     --text: #2a2a2a;
     --text-secondary: #666666;
     --text-inverse: #ffffff;
 
-    --border: #eaeaea;
+    --border: ##faf8fc;
 
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     --strong-shadow: 0 2px 10px rgba(0, 0, 0, 0.397);
@@ -265,9 +265,6 @@ h2 {
 }
 
 .card.animation:hover {
-    background-color: var(--primary);
-    color: var(--text-inverse);
-
     scale: 1.02;
 
     transform: translateY(-1px);
@@ -308,10 +305,15 @@ h2 {
     box-shadow: var(--strong-shadow);
 }
 
-.topics.animation>li:hover {
-    background-color: var(--primary);
-    color: var(--text-inverse);
+.topics>li.sub {
+    width: 97%;
 
+    margin-right: 10px;
+
+    align-self: flex-end;
+}
+
+.topics.animation>li:hover {
     scale: 1.02;
 
     transform: translateY(-1px);

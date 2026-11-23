@@ -17,9 +17,9 @@
             <h1 class="logo" id="project-name">Project Name</h1>
 
             <div class="spaced-center nav-buttons-div">
-                <button class="nav-button active" id="home-nav">Home</button>
-                <button class="nav-button" id="dashboard-nav">Dashboard</button>
-                <button class="nav-button" id="edit-nav">Edit</button>
+                <button class="nav-button active" id="home-nav" onclick="showScreen('home-screen'), activeNavOption('home-nav')">Home</button>
+                <button class="nav-button" id="dashboard-nav" onclick="showScreen('dashboard-screen'), activeNavOption('dashboard-nav')">Dashboard</button>
+                <button class="nav-button" id="edit-nav" onclick="showScreen('edit-screen'), activeNavOption('edit-nav')">Edit</button>
             </div>
         </nav>
     </header>
@@ -28,159 +28,470 @@
         <section class="screen active" id="home-screen">
             <div class="doc-switch-button">
                 <div>
-                    <button id="project-vision-nav-button">
+                    <button class="active" id="project-vision-nav-button" onclick="showSubscreen('project-vision-subscreen'), activeNavButton('project-vision-nav-button')">
                         01<span>Project vision</span>
                     </button>
-                    <button class="active" id="scope-mvp-nav-button">
+                    <button id="scope-mvp-nav-button" onclick="showSubscreen('scope-mvp-subscreen'), activeNavButton('scope-mvp-nav-button')">
                         02<span class="medium">Scope MVP</span>
                     </button>
-                    <button id="requirements-nav-button">
+                    <button id="requirements-nav-button" onclick="showSubscreen('requirements-subscreen'), activeNavButton('requirements-nav-button')">
                         03<span>Requirements</span>
                     </button>
-                    <button id="methodology-nav-button">
+                    <button id="methodology-nav-button" onclick="showSubscreen('methodology-subscreen'), activeNavButton('methodology-nav-button')">
                         04<span>Methodology</span>
                     </button>
-                    <button id="architecture-nav-button">
+                    <button id="architecture-nav-button" onclick="showSubscreen('architecture-subscreen'), activeNavButton('architecture-nav-button')">
                         05<span>Architecture</span>
                     </button>
-                    <button id="backlog-nav-button">
+                    <button id="backlog-nav-button" onclick="showSubscreen('backlog-subscreen'), activeNavButton('backlog-nav-button')">
                         06<span class="little">Backlog</span>
                     </button>
                 </div>
             </div>
-            <section class="subscreen" id="project-vision-subscreen">
+            <section class="subscreen active" id="project-vision-subscreen">
                 <div class="container">
                     <div class="horizontal-list pb-30">
                         <div>
-                            <h2>Problem / Motivation</h2>
+                            <h2>Project Name</h2>
                             <div class="card animation">
-                                <p class="justify" id="problem-motivation-text">The Problem / Motivation section explains why the project exists and what specific problem, need, or opportunity it is meant to address. It provides essential context for the solution, helping developers, stakeholders, and new contributors quickly understand the purpose of the project before diving into technical details.
+                                <p class="justify" id="project-name-text">Giving your software a clear and memorable name turns a random idea in your head into a real, concrete project. Instead of calling your work "new-test-app" or "project-final-2", a real name gives your system an identity that people can recognize and talk about.
 
-                                    Including this section improves the clarity and quality of the documentation, since it connects the technical implementation to a real-world or business need. It also helps ensure that everyone involved in the project shares the same understanding of its goals, which reduces misalignment during development and decision-making.
+                                    Having a proper name also helps you organize the practical side of programming from day one. You will use this name to create your GitHub repository, name your local folders, and label your documentation files so everything stays connected in one place.
 
-                                    In addition, the Problem / Motivation section serves as a reference point throughout the project lifecycle. It helps teams evaluate whether the work being done is still aligned with the original objective and can guide prioritization when trade-offs are needed. Overall, it strengthens communication, supports better planning, and makes the documentation more meaningful and complete.
+                                    In addition, a good project name makes your portfolio look much more professional. When you show your work to recruiters, classmates, or clients, presenting a named product shows that you treated the code with care and structure from the very beginning.
                                 </p>
                             </div>
                         </div>
 
                         <div>
-                            <h2>Project objective</h2>
-                            <div class="card animation">
-                                <p class="justify" id="project-objective-text">The Project Objective defines what the project aims to achieve in a clear and direct way. It describes the final result or outcome expected from the system, helping everyone involved understand what success looks like. Unlike the problem statement, which explains the context and motivation, the objective focuses on the desired solution and end goal.
+                            <h2>Problem / Motivation</h2>
+                            <ul class="topics animation" id="problem-motivation-topics">
+                                <li>- Every good software solves a real problem, frustration, or boring manual task in daily life.</li>
+                                <li>- Stops random coding</li>
+                                <li class="sub">- You always know why a feature is important before writing any code.</li>
+                                <li class="sub">- Prevents you from wasting weeks building tools that nobody actually needs.</li>
+                                <li>- Keeps you motivated</li>
+                                <li class="sub">- Remembering the real frustration that started the project helps you keep going when you hit hard bugs.</li>
+                                <li class="sub">- Connects your daily coding effort to a clear, meaningful purpose.</li>
+                                <li>- Explains the context to others</li>
+                                <li class="sub">- Anyone opening your repository immediately understands why this project exists.</li>
+                            </ul>
+                        </div>
 
-                                Having a well-defined objective is essential because it guides all development decisions throughout the project. It helps prioritize features, avoid unnecessary work, and ensures that the team stays aligned with the main purpose. Without a clear objective, projects can easily become unfocused or grow in unintended directions.
-
-                                In addition, the objective serves as a reference point for evaluating progress and success. It allows teams to verify whether the implemented features are actually contributing to the intended goal. This improves communication between developers, stakeholders, and clients, making expectations clearer and reducing misunderstandings.
-
-                                Overall, a well-written project objective provides direction, focus, and measurable purpose, making the development process more efficient and organized.
-                                </p>
-                            </div>
+                        <div>
+                            <h2>Project Objective</h2>
+                            <ul class="topics animation" id="project-objective-topics">
+                                <li>- Explains your main goal in one simple, direct sentence so anyone reading your docs understands it right away.</li>
+                                <li>- Works as a filter against distractions</li>
+                                <li class="sub">- If a new idea does not directly help this objective, do not build it right now.</li>
+                                <li class="sub">- Keeps your focus sharp when you feel tempted to add random features.</li>
+                                <li>- Defines what "finished" looks like</li>
+                                <li class="sub">- Gives you a clear finish line so you know when the project reached its main goal.</li>
+                                <li class="sub">- Helps you and your teammates agree on what the software must deliver.</li>
+                            </ul>
                         </div>
 
                         <div>
                             <h2>Target Audience</h2>
-                            <ul class="topics animation" id="target-audience-topics">
-                                <li>- Identifies who the project is intended for and who will benefit from it.</li>
-                                <li>- Helps developers make design and implementation decisions focused on users' needs.</li>
-                                <li>- Ensures that project requirements and features align with the expectations of the intended audience.</li>
-                                <li>- Improves communication between developers, stakeholders, and clients by establishing a shared understanding of the target users.</li>
-                                <li>- Reduces the risk of developing unnecessary features that do not provide value.</li>
-                                <li>- Makes the documentation clearer for new contributors by explaining who the system is designed to serve.</li>
-                                <li>- Supports better prioritization of tasks and project goals throughout the development process.</li>
-                                <li>- Provides a reference for evaluating whether the final product successfully meets the needs of its intended users.</li>
-                            </ul>
+                            <div class="card animation">
+                                <p class="justify" id="target-audience-text">Knowing exactly who will use your software changes almost every design and code choice you make. You do not build a tool for experienced programmers the same way you build an app for store owners, students, or everyday users.
+
+                                    For example, a tool made for developers can use terminal commands, keyboard shortcuts, and Markdown files without any problem. On the other hand, an app made for non-technical users needs big, clear buttons, visual hints, and simple words with zero technical jargon.
+
+                                    Writing down your target audience also keeps you honest during development. Whenever you design a new screen or button, you can ask yourself: "Would my target user understand how to use this without my help?"
+                                </p>
+                            </div>
                         </div>
 
                         <div>
-                            <h2>Solution proposal</h2>
+                            <h2>Solution Proposal</h2>
                             <ul class="topics animation" id="solution-proposal-topics">
-                                <li>1. Defines a high-level solution to the problem, turning requirements into a clear direction for implementation.</li>
-                                <li>2. Acts as a bridge between understanding the problem and building the solution in practice.</li>
-                                <li>3. Aligns the team and stakeholders by reducing ambiguity and keeping everyone on the same page.</li>
-                                <li>4. Helps compare and justify different solution approaches based on key criteria like cost and complexity.</li>
-                                <li>5. Reduces rework by documenting the chosen approach before development starts.</li>
-                                <li>6. Records important decisions to support future maintenance and system updates.</li>
+                                <li>1. Explains how your software solves the problem using simple, everyday words - no hard technical terms.</li>
+                                <li>2. Gives you a quick 30-second explanation ready whenever someone asks what you are building.</li>
+                                <li>3. Connects the user's problem directly to how your app works in practice.</li>
+                                <li class="sub">- Shows the main steps of how the user interacts with your tool.</li>
+                                <li class="sub">- Summarizes the core idea before diving into complex code details.</li>
+                                <li>4. Helps align everyone on the team around the same big-picture solution before coding starts.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2>Differential</h2>
+                            <h2>Differentiators</h2>
                             <ul class="topics animation" id="differentials-topics">
-                                <li>- Adding a “differential” section in documentation helps highlight what makes the project or solution unique compared to other approaches.</li>
-                                <li>- It clearly communicates the main advantages and innovations of the system, making its value easier to understand.</li>
-                                <li>- It supports decision-making by showing why this solution was chosen over alternatives.</li>
-                                <li>- It improves communication with stakeholders by emphasizing benefits in a simple and direct way.</li>
-                                <li>- It helps position the project better by making its strengths explicit and easy to identify.</li>
-                                <li>- It also serves as a quick reference for the team to remember the core competitive or technical advantages.</li>
+                                <li>- Shows what makes your project special compared to other tools that already exist on the market.</li>
+                                <li>- Proves you did your homework</li>
+                                <li class="sub">- Shows you researched similar tools first instead of blindly copying what already exists.</li>
+                                <li class="sub">- Helps you learn from the weak points of existing apps and improve on them.</li>
+                                <li>- Highlights your unique value</li>
+                                <li class="sub">- Makes it easy to explain why someone should use your project instead of a generic tool.</li>
+                                <li class="sub">- Looks great in job interviews when explaining your technical choices.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2>Initial technology stack</h2>
-                            <ul class="topics animation" id="initial-tech-stack-topics">
-                                <li>- Defines the technologies chosen at the beginning of the project, creating a clear technical foundation for development.</li>
-                                <li>- Helps ensure consistency across the codebase by aligning the team on the same tools, frameworks, and libraries.</li>
-                                <li>- Reduces confusion and unnecessary changes by documenting decisions early in the project lifecycle.</li>
-                                <li>- Makes onboarding easier for new developers by clearly showing what technologies are being used.</li>
-                                <li>- Supports better planning by allowing the team to evaluate compatibility, scalability, and project constraints.</li>
-                                <li>- Serves as a reference for future updates or migrations of technologies throughout the project.</li>
+                            <h2>Initial Tech Stack</h2>
+                            <div class="card animation">
+                                <p class="justify" id="initial-tech-stack-text">Choosing your programming languages, frameworks, and storage tools early stops one of the most common beginner mistakes: switching technologies in the middle of the project just because you watched a new video or tutorial online.
+
+                                    When you lock in a simple, clear stack from the beginning - like Node.js, HTML, CSS, and local files - you spend your energy solving the real problem instead of constantly relearning basic syntax or setting up new environments.
+
+                                    Documenting your tech stack also helps anyone who downloads your project later. They can immediately see what tools they need installed on their computer to run and test your code without guessing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="subscreen" id="scope-mvp-subscreen">
+                <div class="container">
+                    <div class="horizontal-list pb-30">
+                        <div>
+                            <h2>MVP Objective</h2>
+                            <div class="card animation">
+                                <p class="justify" id="mvp-objective-text">MVP stands for "Minimum Viable Product." Instead of spending an entire year trying to build a giant, perfect app that never gets finished, the MVP objective defines the smallest working version you can build and test quickly.
+
+                                    Think of the MVP as the basic core of your software with zero extra decoration. It does not need fancy animations, complex user profiles, or twenty different themes - it just needs to solve the main problem from start to finish.
+
+                                    Finishing a simple first version teaches you much more than planning a huge system forever. Once your MVP works, you have a real, functional project in your hands that you can improve step by step.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Project Initialization</h2>
+                            <ul class="topics animation" id="project-initialization-topics">
+                                <li>- Defines the very first setup actions that prepare your project folder to work properly.</li>
+                                <li>- Automatic folder and file creation</li>
+                                <li class="sub">- Creates the base /docs folder and generates the 6 standard Markdown templates.</li>
+                                <li class="sub">- Generates the project.yaml metadata file to store basic project info.</li>
+                                <li>- Gives beginners a ready-to-use structure from the first second without manual setup.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>MVP Features</h2>
+                            <ul class="topics animation" id="mvp-features-topics">
+                                <li>- Lists only the basic, essential features your software needs to do its main job.</li>
+                                <li>- Breaks a big, scary project into small, concrete parts</li>
+                                <li class="sub">- Turns vague ideas into simple actions like creating folders, listing files, and saving text.</li>
+                                <li class="sub">- Makes it much easier to estimate how long each part will take to code.</li>
+                                <li>- Protects your focus during development</li>
+                                <li class="sub">- Gives you a clear checklist so you know exactly what must be built first.</li>
+                                <li class="sub">- Helps you avoid spending hours on minor details before the core system even works.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Out of Scope (What NOT to build now)</h2>
+                            <ul class="topics animation" id="out-of-scope-topics">
+                                <li>- Every programmer gets flooded with cool ideas during a project - like login screens, dark mode, AI tools, or cloud sync.</li>
+                                <li>- Stops extra features from ruining your deadline</li>
+                                <li class="sub">- Breaks the bad habit of saying "just one more small feature", which leaves most beginner projects unfinished.</li>
+                                <li class="sub">- Creates a clear boundary so you stay loyal to your MVP plan.</li>
+                                <li>- Saves good ideas for later</li>
+                                <li class="sub">- You are not throwing creative ideas away - you are just parking them safely until version 1.0 works.</li>
+                                <li class="sub">- Gives you a ready-made list of upgrades for future versions of your software.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>User Flow</h2>
+                            <ul class="topics animation" id="user-flow-topics">
+                                <li>1. Shows the exact step-by-step clicks and screens a user goes through from opening the app to finishing their task.</li>
+                                <li>2. Helps you find confusing steps or missing screens before you write any interface code.</li>
+                                <li class="sub">- Lets you test the logic of your app on paper in just five minutes.</li>
+                                <li class="sub">- Shows where buttons, forms, and feedback messages need to appear.</li>
+                                <li>3. Connects every screen directly to a real user action</li>
+                                <li class="sub">- Example: Open app -> View dashboard -> Open file -> Edit text -> Click save -> See updated progress.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="subscreen active" id="scope-mvp-subscreen">
+            <section class="subscreen" id="requirements-subscreen">
                 <div class="container">
-                    <h1 class="pb-30 text-center">MVP Features</h1>
                     <div class="horizontal-list pb-30">
                         <div>
-                            <h2>Project initialization</h2>
-                            <ul class="topics animation" id="target-audience-topics">
-                                <li>- Identifies who the project is intended for and who will benefit from it.</li>
-                                <li>- Helps developers make design and implementation decisions focused on users' needs.</li>
-                                <li>- Ensures that project requirements and features align with the expectations of the intended audience.</li>
-                                <li>- Improves communication between developers, stakeholders, and clients by establishing a shared understanding of the target users.</li>
-                                <li>- Reduces the risk of developing unnecessary features that do not provide value.</li>
-                                <li>- Makes the documentation clearer for new contributors by explaining who the system is designed to serve.</li>
-                                <li>- Supports better prioritization of tasks and project goals throughout the development process.</li>
-                                <li>- Provides a reference for evaluating whether the final product successfully meets the needs of its intended users.</li>
+                            <h2>Requirements Objective</h2>
+                            <div class="card animation">
+                                <p class="justify" id="requirements-objective-text">While the scope shows the big picture of your project, requirements turn those general ideas into clear, specific technical rules. This document acts like a rulebook that explains exactly what the system must do and how it must behave.
+
+                                    Having clear requirements removes guesswork when you sit down to code. Instead of wondering "how should this button work?", you can check your requirements list and follow the exact behavior you already planned.
+
+                                    Think of this file as a checklist contract for your software: when every rule written here works properly in your code, your MVP is officially complete and ready to use.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Functional Requirements (FR)</h2>
+                            <ul class="topics animation" id="functional-requirements-topics">
+                                <li>- Describes every concrete action, button, or task the software must perform.</li>
+                                <li>- Connects almost directly to your code</li>
+                                <li class="sub">- Each requirement usually becomes a specific function, a button click, or a server route.</li>
+                                <li class="sub">- Examples include creating default files, listing documents, editing text, and saving changes.</li>
+                                <li>- Makes testing simple and objective</li>
+                                <li class="sub">- You can easily test each requirement one by one to check if it works or fails.</li>
+                                <li class="sub">- Helps you spot broken features before anyone else uses your app.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2>Solution proposal</h2>
-                            <ul class="topics animation" id="solution-proposal-topics">
-                                <li>1. Defines a high-level solution to the problem, turning requirements into a clear direction for implementation.</li>
-                                <li>2. Acts as a bridge between understanding the problem and building the solution in practice.</li>
-                                <li>3. Aligns the team and stakeholders by reducing ambiguity and keeping everyone on the same page.</li>
-                                <li>4. Helps compare and justify different solution approaches based on key criteria like cost and complexity.</li>
-                                <li>5. Reduces rework by documenting the chosen approach before development starts.</li>
-                                <li>6. Records important decisions to support future maintenance and system updates.</li>
+                            <h2>Non-Functional Requirements (NFR)</h2>
+                            <ul class="topics animation" id="non-functional-requirements-topics">
+                                <li>- Non-functional requirements are not about what buttons exist, but how well the software works behind the scenes.</li>
+                                <li>- Sets technical limits and environment rules</li>
+                                <li class="sub">- Defines whether the app must run offline without internet access.</li>
+                                <li class="sub">- Specifies if the system avoids heavy databases and works on Windows, Linux, and macOS.</li>
+                                <li>- Protects speed and simplicity</li>
+                                <li class="sub">- Ensures the interface responds fast when clicking buttons or saving files.</li>
+                                <li class="sub">- Keeps installation easy enough that beginners do not give up before the app even starts.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2>Differential</h2>
-                            <ul class="topics animation" id="differentials-topics">
-                                <li>- Adding a “differential” section in documentation helps highlight what makes the project or solution unique compared to other approaches.</li>
-                                <li>- It clearly communicates the main advantages and innovations of the system, making its value easier to understand.</li>
-                                <li>- It supports decision-making by showing why this solution was chosen over alternatives.</li>
-                                <li>- It improves communication with stakeholders by emphasizing benefits in a simple and direct way.</li>
-                                <li>- It helps position the project better by making its strengths explicit and easy to identify.</li>
-                                <li>- It also serves as a quick reference for the team to remember the core competitive or technical advantages.</li>
+                            <h2>Data &amp; Storage Rules</h2>
+                            <div class="card animation">
+                                <p class="justify" id="data-storage-rules-text">Every application needs clear rules about how information is saved and kept safe. Instead of setting up complex SQL databases right away, simple projects often save data directly inside local text files like Markdown and YAML.
+
+                                    Defining these storage rules early prevents messy bugs later. You decide exactly where files live, how edits overwrite old content safely, and how metadata like project status and creation date stay structured.
+
+                                    When storage rules are clear and simple, backing up or moving your project to another computer is as easy as copying a single folder.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Testing &amp; Validation</h2>
+                            <ul class="topics animation" id="testing-validation-topics">
+                                <li>1. Uses your requirements list as a final verification checklist before calling a feature finished.</li>
+                                <li>2. Checks both normal actions and edge cases</li>
+                                <li class="sub">- What happens when a document is completely empty?</li>
+                                <li class="sub">- Does the progress bar update right away after saving new text?</li>
+                                <li>3. Gives you confidence that your software works reliably for real users.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="subscreen" id="methodology-subscreen">
+                <div class="container">
+                    <div class="horizontal-list pb-30">
+                        <div>
+                            <h2>Development Model</h2>
+                            <div class="card animation">
+                                <p class="justify" id="development-model-text">A development model defines the routine and structure you use to build your software over time. Without a simple method, it is very easy to jump randomly from file to file, leave half-finished code everywhere, and lose track of what you were doing.
+
+                                    For solo developers and small student projects, you do not need heavy corporate meetings or complicated rules. Using a lightweight approach - like a personal Kanban board with incremental deliveries - keeps your workflow realistic and stress-free.
+
+                                    The goal of choosing a development model is to match your coding routine to your real schedule, helping you make steady, consistent progress every week without burning out.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Work Organization (Columns/States)</h2>
+                            <ul class="topics animation" id="work-organization-topics">
+                                <li>- Splits your work into three clear visual states so you always know what is happening.</li>
+                                <li>- To Do (Waiting in line)</li>
+                                <li class="sub">- Holds tasks that are already planned, keeping your mind free from worrying about future work today.</li>
+                                <li>- Doing (In progress right now)</li>
+                                <li class="sub">- Holds only the one or two tasks you are coding at this exact moment, stopping you from starting five things at once.</li>
+                                <li>- Done (Finished and tested)</li>
+                                <li class="sub">- Collects completed tasks, giving you visible proof of how much progress you have made.</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2>Initial technology stack</h2>
-                            <ul class="topics animation" id="initial-tech-stack-topics">
-                                <li>- Defines the technologies chosen at the beginning of the project, creating a clear technical foundation for development.</li>
-                                <li>- Helps ensure consistency across the codebase by aligning the team on the same tools, frameworks, and libraries.</li>
-                                <li>- Reduces confusion and unnecessary changes by documenting decisions early in the project lifecycle.</li>
-                                <li>- Makes onboarding easier for new developers by clearly showing what technologies are being used.</li>
-                                <li>- Supports better planning by allowing the team to evaluate compatibility, scalability, and project constraints.</li>
-                                <li>- Serves as a reference for future updates or migrations of technologies throughout the project.</li>
+                            <h2>Source of Organization</h2>
+                            <div class="card animation">
+                                <p class="justify" id="source-of-organization-text">Putting tasks on sticky notes, phone reminders, browser tabs, and random text files is one of the fastest ways to forget important bugs and lose control of your project.
+
+                                    Choosing one central file - such as 06-backlog.md inside your own repository - as your single source of truth ensures you always know exactly where to look when you sit down to code.
+
+                                    Because the task list lives right next to your code, you can update your tasks and commit your changes together, keeping your project history clean and organized in one place.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Development Workflow</h2>
+                            <ul class="topics animation" id="development-workflow-topics">
+                                <li>1. Builds a clean, repeatable habit for creating every feature from start to finish.</li>
+                                <li>2. Follow the same simple loop for every task</li>
+                                <li class="sub">- Pick one small task from the backlog and move it to Doing.</li>
+                                <li class="sub">- Write the code and test it locally to make sure nothing broke.</li>
+                                <li class="sub">- Update your documentation if needed, then move the task to Done.</li>
+                                <li>3. Helps you build strong professional discipline early in your programming career.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Approach and Principles</h2>
+                            <ul class="topics animation" id="approach-principles-topics">
+                                <li>- Build the MVP first</li>
+                                <li class="sub">- Focus on making the core features work from start to finish before adding visual polish.</li>
+                                <li>- Grow step by step</li>
+                                <li class="sub">- Improve the software in small, safe increments instead of rewriting everything at once.</li>
+                                <li>- Working code before perfect code</li>
+                                <li class="sub">- Make the code work cleanly first; optimize and refactor it later once you understand the problem better.</li>
+                                <li>- Avoid unnecessary complexity early on so you keep moving forward.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Evolution Control</h2>
+                            <div class="card animation">
+                                <p class="justify" id="evolution-control-text">Once your first version is working, you will naturally want to add new capabilities and improvements. However, adding dozens of random updates at the same time can quickly break what already works.
+
+                                    Grouping future improvements into clear, organized phases - almost like "seasons" of a TV show - keeps your project growing safely. Each phase focuses on a specific group of features that make sense together.
+
+                                    By finishing one phase completely before starting the next, you keep your codebase stable, your documentation accurate, and your progress easy to track over the long term.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="subscreen" id="architecture-subscreen">
+                <div class="container">
+                    <div class="horizontal-list pb-30">
+                        <div>
+                            <h2>System Overview</h2>
+                            <div class="card animation">
+                                <p class="justify" id="system-overview-text">The System Overview is like the floor plan of a house before you start raising the walls. It gives any developer a clear, high-level view of the main parts that make up the application and how they connect.
+
+                                    For example, a local web tool can be broken down into three simple pieces: a browser screen for the user, a local Node.js server handling the logic, and local Markdown files storing the data.
+
+                                    In less than thirty seconds, anyone opening your repository can read this overview and immediately understand how the entire machine fits together without reading hundreds of lines of code first.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Layered Architecture</h2>
+                            <ul class="topics animation" id="layered-architecture-topics">
+                                <li>- Separates your code by responsibility so each part has one clear job.</li>
+                                <li>- Frontend (Screen &amp; Interface)</li>
+                                <li class="sub">- Handles everything the user sees and clicks in the browser, keeping visual code separate from file operations.</li>
+                                <li>- Backend (Local Server &amp; Logic)</li>
+                                <li class="sub">- Works as the middleman that reads files, calculates progress, and safely processes requests from the screen.</li>
+                                <li>- Filesystem (Data Storage)</li>
+                                <li class="sub">- Saves all text and metadata directly inside .md and .yaml files without needing a complex database.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Data Flow</h2>
+                            <div class="card animation">
+                                <p class="justify" id="data-flow-text">Understanding how data moves through your software makes full-stack programming much less mysterious for beginners. Data flow traces the exact journey of information from a user's action until the screen updates.
+
+                                    For example: the user clicks "Save" in the browser, the frontend sends a request to the local API, the backend writes the new text into the Markdown file on disk, and then sends a confirmation back to update the dashboard.
+
+                                    When a bug happens, knowing this path makes fixing it ten times easier because you can check each step of the journey until you find where the data stopped.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Folder Structure</h2>
+                            <ul class="topics animation" id="folder-structure-topics">
+                                <li>- Maps out where every file and folder lives before you start creating them randomly in your editor.</li>
+                                <li>- Keeps different parts of the project cleanly separated</li>
+                                <li class="sub">- Screen files (HTML, CSS, JS) stay organized inside /public.</li>
+                                <li class="sub">- Server routes and logic stay grouped inside /server.</li>
+                                <li class="sub">- Project documentation lives neatly inside /docs.</li>
+                                <li>- Makes your repository look clean, predictable, and professional from day one.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Architectural Decisions</h2>
+                            <ul class="topics animation" id="architectural-decisions-topics">
+                                <li>1. Every software project requires technical choices - such as using local Markdown files instead of setting up PostgreSQL or MongoDB.</li>
+                                <li>2. Prevents doubt and confusion later</li>
+                                <li class="sub">- Writing down why you made a choice stops your future self from looking at the code six months later and wondering what you were thinking.</li>
+                                <li class="sub">- Explains the trade-offs between simplicity, speed, and project size.</li>
+                                <li>3. Helps new contributors understand and respect the design boundaries of your project.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Future Evolution</h2>
+                            <ul class="topics animation" id="future-evolution-topics">
+                                <li>- Lists potential technical upgrades that the system can support later without throwing away your current code.</li>
+                                <li>- Examples of future growth</li>
+                                <li class="sub">- Supporting multiple projects at the same time instead of just one folder.</li>
+                                <li class="sub">- Adding local network sharing for small teams or an optional database if the project scales up.</li>
+                                <li>- Encourages you to write clean, modular functions today so adding bigger features tomorrow is painless.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="subscreen" id="backlog-subscreen">
+                <div class="container">
+                    <div class="horizontal-list pb-30">
+                        <div>
+                            <h2>Backlog Objective</h2>
+                            <div class="card animation">
+                                <p class="justify" id="backlog-objective-text">Opening an empty code editor without a concrete task list often causes instant creative freeze - you stare at the screen and do not know where to begin. The backlog solves this by turning all your planning into an actionable to-do list.
+
+                                    Here, big ideas from your vision, scope, and architecture are broken down into small, specific coding steps ordered by priority. Instead of "build the whole app", you get clear tasks like "create GET /docs route".
+
+                                    Having a clear backlog means every time you open your computer to code, you already know the exact next step to take without wasting time deciding what to do.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Task Blocks by Area</h2>
+                            <ul class="topics animation" id="task-blocks-topics">
+                                <li>- Groups similar coding tasks into clear, logical categories so you work with focus.</li>
+                                <li>- Common project blocks</li>
+                                <li class="sub">- Project Setup &amp; Backend Base: creating folders, package.json, and basic server routes.</li>
+                                <li class="sub">- Filesystem &amp; Editor: reading, editing, and saving Markdown files safely.</li>
+                                <li class="sub">- Dashboard &amp; Progress: displaying file statuses and overall completion bars.</li>
+                                <li>- Lets you finish and test one technical layer completely before jumping to the next.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Living Kanban Board</h2>
+                            <div class="card animation">
+                                <p class="justify" id="living-kanban-text">Unlike earlier documents such as the Project Vision - which stay mostly the same once you write them - your backlog is a living workspace that changes every single day you write code.
+
+                                    Each task moves across your board from To Do, into Doing while you work on it, and finally lands in Done once it is tested and working properly.
+
+                                    Watching completed tasks pile up in the Done column gives you real, visible proof of your progress and keeps your energy high until the entire MVP is finished.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>Task Priority &amp; Order</h2>
+                            <ul class="topics animation" id="task-priority-topics">
+                                <li>- Organizes tasks from top to bottom so you always build the foundation before the roof.</li>
+                                <li>- Follows a natural technical sequence</li>
+                                <li class="sub">- Start with folder structure and server setup before building visual screens.</li>
+                                <li class="sub">- Connect file reading and saving before adding progress bars or extra polish.</li>
+                                <li>- Stops you from getting stuck on features that depend on code you have not written yet.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Update Rules</h2>
+                            <ul class="topics animation" id="update-rules-topics">
+                                <li>1. Treat the backlog as an active checklist that grows and changes alongside your code.</li>
+                                <li>2. Keep the list honest every day</li>
+                                <li class="sub">- Whenever you discover a new bug or hidden task while coding, write it down in To Do right away instead of relying on memory.</li>
+                                <li class="sub">- Move tasks to Done immediately after testing them so the file always reflects reality.</li>
+                                <li>3. Never let the backlog go stale - an outdated task list quickly stops being useful for controlling your project.</li>
                             </ul>
                         </div>
                     </div>
